@@ -1,0 +1,19 @@
+.app-page-detail {
+    .title {
+        font-weight: bolder;
+        margin-top: 1em;
+    }
+    .overview {
+        border: 1px  lightgray solid;
+        margin-top: 1em;
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-height: 6em;
+    }
+    .container {
+        max-width: 25em;
+    }
+    button {
+        margin-top: 2em;
+    }
+}

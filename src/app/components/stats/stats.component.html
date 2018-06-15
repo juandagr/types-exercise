@@ -1,3 +1,5 @@
-<p>
-  stats works!
-</p>
+<div class="app-stats">
+    <div [ngClass]="{'high': data.popularity >= 12, 'normal': data.popularity < 12 && data.popularity >= 5, 'low': data.popularity < 5}">Popularity: {{ data.popularity | number:'1.1-2' }}</div>
+    <div [ngClass]="{'invisible': data.vote_average === 0 }">Vote average: {{ data.vote_average }}</div>
+    <div *ngIf="data.vote_count !== 0">Votes: {{ data.vote_count }}</div>
+  </div>

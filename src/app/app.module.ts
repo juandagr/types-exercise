@@ -15,6 +15,7 @@ import { PageDetailComponent } from './components/page-detail/page-detail.compon
 import { PageListComponent } from './components/page-list/page-list.component';
 import { SearchComponent } from './components/search/search.component';
 import { StatsComponent } from './components/stats/stats.component';
+import { GenresComponent } from './components/genres/genres.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { StatsComponent } from './components/stats/stats.component';
     PageDetailComponent,
     PageListComponent,
     SearchComponent,
-    StatsComponent
+    StatsComponent,
+    GenresComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +38,6 @@ import { StatsComponent } from './components/stats/stats.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [ListComponent, PageDetailComponent, PageListComponent, SearchComponent, StatsComponent]
+  exports: [ListComponent, PageDetailComponent, PageListComponent, SearchComponent, StatsComponent, GenresComponent]
 })
 export class AppModule { }

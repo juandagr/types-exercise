@@ -1,3 +1,44 @@
-<p>
-  page-detail works!
-</p>
+
+<div class="app-page-detail" >
+    <div fxLayout="row" fxLayoutAlign="space-around center">
+      <div class="container">
+        <div class="header" fxLayout="row" fxLayoutAlign="space-around center">
+          <div class="info">
+            <h2>{{ movie.title }}</h2>
+            <div>{{ strGenres }}</div>
+            <div>{{ movie.release_date }}</div>
+          </div>
+          <div class="stats">
+            <app-stats
+              [data]="{ popularity: movie.popularity, vote_average: movie.vote_average, vote_count: movie.vote_count }">
+            </app-stats>
+          </div>
+        </div>
+  
+        <div class="overview">
+            {{ movie.overview }}
+        </div>
+        <div>
+          <div class="title">Production companies:</div>
+          <div>{{ strProductionCompanies }}</div>
+        </div>
+  
+        <div>
+          <div class="title">Production countries:</div>
+          <div>{{ strProductionCountries }}</div>
+        </div>
+  
+        <div>
+          <div class="title">Spoken languages:</div>
+          <div>{{ strSpokenLanguages }}</div>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <button mat-raised-button (click) = "goToSearch()">Back</button>
+    </div>
+  
+    <!-- <pre>{{ movie | json }}</pre> -->
+  
+  </div>
+  

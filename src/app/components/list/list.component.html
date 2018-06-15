@@ -1,5 +1,4 @@
 <div class="app-list">
-  <h1>{{descriptor | json}}</h1>
   <table mat-table class="mat-elevation-z8">
     <thead>
       <tr>
@@ -10,12 +9,22 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-          <td>---</td>
-          <td>---</td>
-          <td>---</td>
-          <td>---</td>
+      <tr *ngFor='let movie of descriptor.results' (click)="onClick(movie.id)">
+          <td> <h2>{{movie.title}}</h2> <br/> <p>{{ (movie.overview.length > 100) ? (movie.overview | slice:0:100) + '....' : (movie.overview) }}</p></td>
+          <td>
+            <app-genres
+              [genres]="genres" 
+              [genreIds]="movie.genre_ids">
+            </app-genres>
+          </td>
+          <td>{{movie.release_date}}</td>
+          <td> 
+            <app-stats 
+              [data]="{ popularity: movie.popularity, vote_average: movie.vote_average, vote_count: movie.vote_count }">
+            </app-stats> 
+          </td>
       </tr>
     </tbody>
   </table>
 </div>
+
